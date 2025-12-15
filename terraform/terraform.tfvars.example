@@ -1,0 +1,38 @@
+# Archivo de ejemplo de variables de Terraform
+# Copia este archivo a terraform.tfvars y completa con tus valores
+# NUNCA commitees terraform.tfvars (ya está en .gitignore)
+
+aws_region   = "us-east-1"
+project_name = "consultation-app"
+environment  = "dev"
+owner        = "tu-nombre"
+
+# Configuración de ECR
+ecr_repository_name = "consultation-app"
+image_tag          = "latest"
+
+# Auto Scaling
+min_size        = 1
+max_size        = 1
+max_concurrency = 10
+
+# Recursos
+cpu_units    = "256"
+memory_units = "512"
+app_port     = 8000
+
+# Health Check
+health_check_path                = "/health"
+health_check_interval            = 20
+health_check_timeout             = 5
+health_check_healthy_threshold   = 2
+health_check_unhealthy_threshold = 5
+
+# Auto Deploy (false para control manual)
+auto_deploy_enabled = false
+
+# Variables sensibles - Obtener de variables de entorno o AWS Secrets Manager
+# clerk_secret_key = "sk_live_..."
+# clerk_jwks_url   = "https://..."
+# openai_api_key   = "sk-..."
+
